@@ -25,7 +25,7 @@ class Invoice:
         return total_discount
 
     def totalPurePrice(self, products):
-        total_pure_price = self.totalImpurePrice(products)-self.totalDiscount(products)
+        total_pure_price = self.totalImpurePrice(products) - self.totalDiscount(products)
         return total_pure_price
 
     def inputAnswer(self, input_value):
@@ -46,3 +46,12 @@ class Invoice:
             else:
                 return userInput
                 break
+
+    def itemExpensive(self, products):
+        most_expen = 0.00
+
+        for k, v in products.items():
+            if most_expen < float(v['unit_price']):
+                most_expen = float(v['unit_price'])
+
+        return most_expen

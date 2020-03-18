@@ -34,3 +34,8 @@ def test_CanCalculateTotalPurePrice(invoice, products):
 def test_TestOne():
     invoice = Invoice()
     assert invoice.addProduct(1, 2, 3) == invoice.items
+
+
+def test_itemExpensive(invoice, products):
+    invoice.itemExpensive(products)
+    assert invoice.itemExpensive(products) == 7.5
